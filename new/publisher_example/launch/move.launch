@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="publisher_example" type="move_code.py" name="move_node" output="screen">
+
+    </node>
+</launch>

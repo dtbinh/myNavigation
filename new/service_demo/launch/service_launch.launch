@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="service_demo" type="service_code.py" name="service_test_node" output="screen">
+
+    </node>
+</launch>

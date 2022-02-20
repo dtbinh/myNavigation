@@ -1,29 +1,17 @@
-# README #
+## Install Dependencies
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Execute the following commands:<br>
+`cd ~/ros_ws/src`<br>
+`git clone https://bitbucket.org/theconstructcore/openai_ros.git`<br>
+`cd ~/ros_ws`<br>
+`catkin_make`<br>
+`source devel/setup.bash`<br>
+`rosdep install openai_ros`<br>
 
-### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+## Use
 
-### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
 
-### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact

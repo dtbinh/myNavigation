@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="publisher_example" type="stop_code.py" name="stop_node" output="screen">
+
+    </node>
+</launch>
