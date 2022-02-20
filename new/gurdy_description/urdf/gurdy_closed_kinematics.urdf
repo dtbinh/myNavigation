@@ -1,0 +1,301 @@
+<robot name="gurdy">
+
+    <material name="blue">
+        <color rgba="0 0 0.8 1"/>
+    </material>
+    <material name="red">
+        <color rgba="0.8 0 0 1"/>
+    </material>
+    <material name="green">
+        <color rgba="0 0.8 0 1"/>
+    </material>
+	<!-- * * * Link Definitions * * * -->
+    <link name="base_link">
+ 	    <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.6" />
+            <inertia ixx="0.000455" ixy="0.0" ixz="0.0" iyy="0.000455" iyz="0.0" izz="0.00075"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0.02" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.04"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://gurdy_description/models/gurdy/meshes/gurdy_head_v2.dae"/>
+            </geometry>
+        </visual>
+	</link>
+
+    <link name="upperleg_M1_link">
+ 	    <inertial>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <mass value="0.1" />
+            <inertia ixx="3.015625e-05" ixy="0.0" ixz="0.0" iyy="3.015625e-05" iyz="0.0" izz="3.125e-07"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="0.06" radius="0.0025"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://gurdy_description/models/gurdy/meshes/gurdy_higherleg_v2.dae"/>
+            </geometry>
+        </visual>
+	</link>
+
+
+    <joint name="head_upperlegM1_joint" type="continuous">
+    	<parent link="base_link"/>
+    	<child link="upperleg_M1_link"/>
+        <origin xyz="-0.02165 -0.0125 -0.008" rpy="3.14159 0 0.523599"/>
+        <axis xyz="0 1 0"/>
+	</joint>
+
+
+    <link name="upperleg_M2_link">
+ 	    <inertial>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <mass value="0.1" />
+            <inertia ixx="3.015625e-05" ixy="0.0" ixz="0.0" iyy="3.015625e-05" iyz="0.0" izz="3.125e-07"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="0.06" radius="0.0025"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://gurdy_description/models/gurdy/meshes/gurdy_higherleg_v2.dae"/>
+            </geometry>
+        </visual>
+	</link>
+
+
+    <joint name="head_upperlegM2_joint" type="continuous">
+    	<parent link="base_link"/>
+    	<child link="upperleg_M2_link"/>
+        <origin xyz="0.02165 -0.0125 -0.008" rpy="3.14159 0 2.61799"/>
+        <axis xyz="0 1 0"/>
+	</joint>
+
+
+    <link name="upperleg_M3_link">
+ 	    <inertial>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <mass value="0.1" />
+            <inertia ixx="3.015625e-05" ixy="0.0" ixz="0.0" iyy="3.015625e-05" iyz="0.0" izz="3.125e-07"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="0.06" radius="0.0025"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://gurdy_description/models/gurdy/meshes/gurdy_higherleg_v2.dae"/>
+            </geometry>
+        </visual>
+	</link>
+
+
+    <joint name="head_upperlegM3_joint" type="continuous">
+    	<parent link="base_link"/>
+    	<child link="upperleg_M3_link"/>
+        <origin xyz="0 0.025 -0.008" rpy="3.14159 0 -1.5708"/>
+        <axis xyz="0 1 0"/>
+	</joint>
+
+
+    <link name="lowerleg_M1_link">
+ 	    <inertial>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <mass value="0.1" />
+            <inertia ixx="3.015625e-05" ixy="0.0" ixz="0.0" iyy="3.015625e-05" iyz="0.0" izz="3.125e-07"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="0.06" radius="0.0025"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://gurdy_description/models/gurdy/meshes/gurdy_lowerleg_v2.dae"/>
+            </geometry>
+        </visual>
+	</link>
+
+
+    <joint name="upperlegM1_lowerlegM1_joint" type="continuous">
+    	<parent link="upperleg_M1_link"/>
+    	<child link="lowerleg_M1_link"/>
+        <origin xyz="0 0.0095 0.06" rpy="0 0 3.14159"/>
+        <axis xyz="0 1 0"/>
+	</joint>
+
+    <link name="lowerleg_M2_link">
+ 	    <inertial>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <mass value="0.1" />
+            <inertia ixx="3.015625e-05" ixy="0.0" ixz="0.0" iyy="3.015625e-05" iyz="0.0" izz="3.125e-07"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="0.06" radius="0.0025"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://gurdy_description/models/gurdy/meshes/gurdy_lowerleg_v2.dae"/>
+            </geometry>
+        </visual>
+	</link>
+
+
+    <joint name="upperlegM2_lowerlegM2_joint" type="continuous">
+    	<parent link="upperleg_M2_link"/>
+    	<child link="lowerleg_M2_link"/>
+        <origin xyz="0 0.0095 0.06" rpy="0 0 3.14159"/>
+        <axis xyz="0 1 0"/>
+	</joint>
+
+    <link name="lowerleg_M3_link">
+ 	    <inertial>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <mass value="0.1" />
+            <inertia ixx="3.015625e-05" ixy="0.0" ixz="0.0" iyy="3.015625e-05" iyz="0.0" izz="3.125e-07"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="0.06" radius="0.0025"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://gurdy_description/models/gurdy/meshes/gurdy_lowerleg_v2.dae"/>
+            </geometry>
+        </visual>
+	</link>
+
+
+    <joint name="upperlegM3_lowerlegM3_joint" type="continuous">
+    	<parent link="upperleg_M3_link"/>
+    	<child link="lowerleg_M3_link"/>
+        <origin xyz="0 0.0095 0.06" rpy="0 0 3.14159"/>
+        <axis xyz="0 1 0"/>
+	</joint>
+
+
+    <link name="basefoot_link">
+ 	    <inertial>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <mass value="0.1" />
+            <inertia ixx="3.015625e-05" ixy="0.0" ixz="0.0" iyy="3.015625e-05" iyz="0.0" izz="3.125e-07"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="0.06" radius="0.0025"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://gurdy_description/models/gurdy/meshes/gurdy_base_v2.dae"/>
+            </geometry>
+        </visual>
+	</link>
+
+
+    <link name="basefoot_peg_M1_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.015 0.01 0.01"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+    </link>
+
+
+    <joint name="lowerlegM1_basefootpegM1_joint" type="fixed">
+        <parent link="lowerleg_M1_link"/>
+        <child link="basefoot_peg_M1_link"/>
+        <origin xyz="0 0.0095 0.06" rpy="0 0 1.5708"/>
+    </joint>
+
+
+    <joint name="basefoot_peg_M1_basefoot_peg_M1_joint" type="fixed">
+        <parent link="basefoot_peg_M1_link"/>
+        <child link="basefoot_link"/>
+        <origin xyz="0 0.025 0.007" rpy="0 3.14159 3.14159"/>
+    </joint>
+
+
+    <link name="basefoot_peg_M2_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.015 0.01 0.01"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+    </link>
+
+
+    <joint name="basefoot_peg_M2_basefoot_peg_M2_joint_joint" type="fixed">
+        <parent link="lowerleg_M2_link"/>
+        <child link="basefoot_peg_M2_link"/>
+        <origin xyz="0 0.0095 0.06" rpy="0 0 -1.5708"/>
+    </joint>
+
+
+    <joint name="basefoot_peg_M2_basefoot_joint" type="fixed">
+        <parent link="basefoot_peg_M2_link"/>
+        <child link="basefoot_link"/>
+        <origin xyz="0 -0.025 0.007" rpy="0 3.14159 2.0944"/>
+    </joint>
+
+
+    <link name="basefoot_peg_M3_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.015 0.01 0.01"/>
+            </geometry>
+            <material name="green"/>
+        </visual>
+    </link>
+
+
+    <joint name="basefoot_peg_M3_basefoot_peg_M2_joint_joint" type="fixed">
+        <parent link="lowerleg_M3_link"/>
+        <child link="basefoot_peg_M3_link"/>
+        <origin xyz="0 0.0095 0.06" rpy="0 0 -1.5708"/>
+    </joint>
+
+
+    <joint name="basefoot_peg_M3_basefoot_joint" type="fixed">
+        <parent link="basefoot_peg_M3_link"/>
+        <child link="basefoot_link"/>
+        <origin xyz="0 -0.025 0.007" rpy="0 3.14159 0"/>
+    </joint>
+
+    
+</robot>
